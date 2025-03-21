@@ -1,12 +1,16 @@
-.header {
+header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color:  #002E5D;
-    color:  #002E5D;
+    color:  #e4edf7;
   
     .logo img {
       height: 40px;
+    }
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
     }
 }

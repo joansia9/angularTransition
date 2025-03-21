@@ -1,6 +1,16 @@
-<header class ="header">
+<header>
     <div class ="logo">
         <img class="styled-image" src="/BYU_monogram_white@2x.png" alt="Image Description">
     </div>
-    <h1>{{title()}}</h1>
+   <div class="text-container"> 
+
+        @for (breadcrumb of config()?.breadcrumbs; track breadcrumb.text){
+            <p>{{breadcrumb.text}}</p>
+        }
+        <h2>{{config()?.title?.text}}</h2>
+        <h2>{{config()?.subtitle?.text}}</h2>
+    </div>
 </header>
+<!-- 
+input() is used to bind input properties with signals.
+defaultConfig is used to provide an initial value. -->

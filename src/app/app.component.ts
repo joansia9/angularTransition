@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
-import { ByuHeaderComponent } from './byu-header/byu-header.component';
+import { ByuHeaderComponent, HeaderConfig } from './byu-header/byu-header.component';
 import { ByuFooterComponent } from './byu-footer/byu-footer.component';
-
-type HeaderLink = {
-  path: string,
-  label: string
-}
 
 @Component({
   selector: 'app-root',
@@ -15,4 +10,34 @@ type HeaderLink = {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  headerConfig: HeaderConfig = {
+    title: {
+      text: 'My custom title',
+      path: '/'
+    },
+    subtitle: {
+      text: 'My custom subtitle',
+      path: '/'
+    },
+    breadcrumbs: [
+      {
+        text: 'College of Engineering',
+        path: '/'
+      },
+      {
+        text: 'school of rock',
+        path: '/'
+      }
+    ],
+    menu: [
+      {
+        text: 'item 1',
+        path: '/'
+      },
+      {
+        text: 'item 2',
+        path: '/'
+      }
+    ]
+  }
 }
