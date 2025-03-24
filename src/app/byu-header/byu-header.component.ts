@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 type HeaderLink = {
   text: string;
@@ -19,7 +20,7 @@ export type HeaderConfig = {
 
 @Component({
   selector: 'byu-header',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './byu-header.component.html',
   styleUrl: './byu-header.component.scss'
 })

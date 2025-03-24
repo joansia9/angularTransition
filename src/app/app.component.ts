@@ -28,7 +28,7 @@ export class AppComponent {
         path: '/'
       },
       {
-        text: 'school of rock',
+        text: 'School of rock',
         path: '/'
       }
     ],
