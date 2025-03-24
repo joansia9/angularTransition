@@ -1,0 +1,35 @@
+footer {
+    font-family: 'HCo Ringside Narrow SSm', 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    background-color: #002E5D;
+    text-align: center;
+    padding: 10px 20px;
+  }
+  
+  p {
+    margin: 8px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .title {
+    font-family: 'HCo Ringside Narrow SSm Bold', 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+  
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  

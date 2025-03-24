@@ -44,7 +44,6 @@ export type SidebarConfig = {
 export class LinkerSidebarComponent {
   opened: boolean = false;
   config = input<SidebarConfig>();
-  expanded = new Set<string>();  // track which groups are expanded
 
   toggleMenuIcon() {
     this.opened = !this.opened;
