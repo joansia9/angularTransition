@@ -1,0 +1,36 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side">
+        <div class="sidebar-inner">
+          <!-- Top section: hamburger -->
+          <div class="sidebar-header">
+            <button mat-button (click)="sidenav.toggle(); toggleMenuIcon()" class="hamburger-btn">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+      
+          <!-- Main menu section -->
+          <div class="sidebar-menu">
+            @for (menuItem of config()?.menu; track menuItem) {
+              @if (menuItem.type === 'link') {
+                <button mat-button>{{ menuItem.text }}</button>
+              } @else {
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>{{ menuItem.text }}</mat-panel-title>
+                  </mat-expansion-panel-header>
+      
+                  @for (item of menuItem.items; track item) {
+                    <button mat-button class="sub-link">{{ item.text }}</button>
+                  }
+                </mat-expansion-panel>
+              }
+            }
+          </div>
+        </div>
+      </mat-sidenav>      
+
+    <mat-sidenav-content>
+        <button *ngIf="!opened" mat-button (click)="toggleMenuIcon(); sidenav.toggle()" class="hamburger-btn"><mat-icon>menu</mat-icon></button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+  

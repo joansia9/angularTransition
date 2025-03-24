@@ -1,0 +1,37 @@
+.example-container {
+    height: 100vh;
+  }
+  
+  mat-sidenav {
+    width: 240px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    background-color: rgb(168, 168, 240);
+  }
+  
+  mat-sidenav.collapsed {
+    width: 60px;
+  }
+  
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .sub-link {
+    padding-left: 16px;
+    font-size: 0.9rem;
+    text-align: left;
+    width: 100%;
+  }
+  
+  
+  
