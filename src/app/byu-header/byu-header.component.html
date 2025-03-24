@@ -1,14 +1,17 @@
 <header>
-    <div class ="logo">
+    <div class = "logo">
         <img class="styled-image" src="/BYU_monogram_white@2x.png" alt="Image Description">
     </div>
-   <div class="text-container"> 
-
-        @for (breadcrumb of config()?.breadcrumbs; track breadcrumb.text){
-            <p>{{breadcrumb.text}}</p>
-        }
-        <h1>{{config()?.title?.text}}</h1>
-        <h2>{{config()?.subtitle?.text}}</h2>
+    <div class="Header-titles"> 
+        <div class="breadcrumbs">
+            @for (breadcrumb of config()?.breadcrumbs; track breadcrumb.text){
+                <a routerLink="{{breadcrumb.path}}" >{{breadcrumb.text}}</a>
+            }
+        </div>
+        <div class ="title-containers">
+            <h1 class="byu-title">{{config()?.title?.text}}</h1>
+            <h2 class="byu-subtitle">{{config()?.subtitle?.text}}</h2>
+        </div>
     </div>
 </header>
 <!-- 
