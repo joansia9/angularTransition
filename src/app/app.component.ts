@@ -12,7 +12,7 @@ import { ByuFooterComponent } from './byu-footer/byu-footer.component';
 export class AppComponent {
   headerConfig: HeaderConfig = {
     title: {
-      text: 'My custom title',
+      text: 'Components Demo Site',
       path: '/'
     },
     subtitle: {

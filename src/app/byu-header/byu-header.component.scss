@@ -5,7 +5,7 @@ header {
     gap: 20px;
     background-color:  #002E5D;
     color:  #e4edf7;
-    font-family: 'Public Sans', 'Noto Sans', 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: 'HCo Ringside Narrow SSm', 'Open Sans', Helvetica, Arial, sans-serif;
 
     .logo img {
       height: 40px;
@@ -78,22 +78,39 @@ header {
 
       .byu-title{
         font-size: 2rem;
+        margin-top: 3px;
         margin-bottom: 1px;
         font-weight: 500;
       }
 
       .byu-subtitle{
+        margin-top: 2px;
+        margin-bottom: 1px;
         font-size: 1.3rem;
         font-weight: 300;
       }
     }   
 
-    .signin-icon {
+    .signin {
       display: flex;
-      margin-left: auto;
       align-items: center;
-      height: 40px;
-      width: 40px;
+      gap: 10px;
+      font-size: 1.2rem;
+      margin-left: auto;
+
+      .signin-icon {
+        display: flex;
+        margin-left: auto;
+        margin-right: 0px;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+      }
+  
+      .signin-link {
+        color: #FFF;
+        text-decoration: none;
+      }
     }
     
 }
