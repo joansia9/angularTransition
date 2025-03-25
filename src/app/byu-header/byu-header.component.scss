@@ -1,27 +1,67 @@
 header {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px 20px;
-    gap: 20px;
     background-color:  #002E5D;
-    color:  #e4edf7;
     font-family: 'HCo Ringside Narrow SSm', 'Open Sans', Helvetica, Arial, sans-serif;
 
-    .logo img {
-      height: 40px;
-      align-items:center;
-      justify-content: center;
-    }
-    // TODO: making columns!
-    .Header-titles {
-      position: relative; // 👈 required for the ::before element
+    .header-top {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-left: 30px;
-      margin-top: 10px;
+      align-items: center;
+      padding: 10px 20px 20px;
+      gap: 20px;
+      color:  #e4edf7;
+      .logo img {
+        height: 40px;
+        align-items:center;
+        justify-content: center;
+      }
+      // TODO: making columns!
+      .Header-titles {
+        position: relative; // 👈 required for the ::before element
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 30px;
+        margin-top: 10px;
+        
+        &::before {
+          content: " ";
+          display: block;
+          position: absolute;
+          background: #BDD6E6;
+          width: 1px;
+          height: 84%;
+          right: auto;
+          left: 0;
+          top: 13%; 
+      }
       
-      &::before {
+      }
+      .breadcrumbs {
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        gap: 10px;  
+        font-weight: bold;
+    
+      }
+      .breadcrumbs a {
+        position: relative; //bug fixed add this to render the line
+        color: #a6abb1;  
+        text-decoration: none;
+        font-size: 1.3rem;
+      }
+
+      .breadcrumbs a:not(:first-child) {
+        padding-left: 10px;  //just dont change the padding of the first element
+      }
+
+      .breadcrumbs a:visited {
+        color: #a6abb1;         
+      }
+
+      .breadcrumbs a:hover {
+        color: #ffffff; 
+      }
+      .breadcrumbs a:not(:first-child)::before {
         content: " ";
         display: block;
         position: absolute;
@@ -30,86 +70,48 @@ header {
         height: 84%;
         right: auto;
         left: 0;
-        top: 13%; 
-    }
-    
-    }
-    .breadcrumbs {
-      display: flex;
-      flex-direction:row;
-      align-items: center;
-      gap: 10px;  
-      font-weight: bold;
-  
-    }
-    .breadcrumbs a {
-      position: relative; //bug fixed add this to render the line
-      color: #a6abb1;  
-      text-decoration: none;
-      font-size: 1.3rem;
-    }
-
-    .breadcrumbs a:not(:first-child) {
-      padding-left: 10px;  //just dont change the padding of the first element
-    }
-
-    .breadcrumbs a:visited {
-      color: #a6abb1;         
-    }
-
-    .breadcrumbs a:hover {
-      color: #ffffff; 
-    }
-    .breadcrumbs a:not(:first-child)::before {
-      content: " ";
-      display: block;
-      position: absolute;
-      background: #BDD6E6;
-      width: 1px;
-      height: 84%;
-      right: auto;
-      left: 0;
-      top: 13%;   
-    }
-    .title-containers {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-
-      .byu-title{
-        font-size: 2rem;
-        margin-top: 3px;
-        margin-bottom: 1px;
-        font-weight: 500;
+        top: 13%;   
       }
-
-      .byu-subtitle{
-        margin-top: 2px;
-        margin-bottom: 1px;
-        font-size: 1.3rem;
-        font-weight: 300;
-      }
-    }   
-
-    .signin {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.2rem;
-      margin-left: auto;
-
-      .signin-icon {
+      .title-containers {
         display: flex;
-        margin-left: auto;
-        margin-right: 0px;
+        flex-direction: column;
+        text-align: left;
+
+        .byu-title{
+          font-size: 2rem;
+          margin-top: 3px;
+          margin-bottom: 1px;
+          font-weight: 500;
+        }
+
+        .byu-subtitle{
+          margin-top: 2px;
+          margin-bottom: 1px;
+          font-size: 1.3rem;
+          font-weight: 300;
+        }
+      }   
+
+      .signin {
+        display: flex;
         align-items: center;
-        height: 20px;
-        width: 20px;
-      }
-  
-      .signin-link {
-        color: #FFF;
-        text-decoration: none;
+        gap: 10px;
+        font-size: 1.3rem;
+        margin-left: auto;
+
+        .signin-icon {
+          display: flex;
+          margin-left: auto;
+          margin-right: 0px;
+          align-items: center;
+          height: 20px;
+          width: 20px;
+        }
+    
+        .signin-link {
+          color: #FFF;
+          text-decoration: none;
+        }
       }
     }
     
