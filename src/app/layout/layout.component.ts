@@ -42,22 +42,15 @@ export class LayoutComponent {
     ]
   }
 
-    sidebarConfig: SidebarConfig = {
-      menu: [
-        {
-          type: 'link',
-          text: 'Sources',
-          path: '/'
-        },
-        {
-          type: 'group',
-          text: 'Dropdown example',
-          items: [
-            { type: 'link', text: 'Repos', path: '/' },
-            { type: 'link', text: 'Data', path: '/' },
-            { type: 'link', text: 'Other', path: '/' }
-          ]
-        }
-      ]
-    }
+  sidebarConfig: SidebarConfig = {
+    menu: [
+      { type: 'link', text: 'Person ID', icon: 'badge', path: '/', showSearch: true },
+      { type: 'link', text: 'Person', icon: 'person', path: '/' },
+      { type: 'link', text: 'Source', icon: 'source', path: '/' },
+      { type: 'link', text: 'Repository', icon: 'folder', path: '/' },
+      { type: 'link', text: 'Export', icon: 'file_download', path: '/' },
+      { type: 'link', text: 'Data Management', icon: 'manage_accounts', path: '/' }
+    ]
+  };
+  
 }

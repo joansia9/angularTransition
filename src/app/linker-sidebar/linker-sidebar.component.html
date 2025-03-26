@@ -1,24 +1,59 @@
-<mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side">
-        <div class="sidebar-inner">
-          <!-- Top section: hamburger -->
-          <div class="sidebar-header">
-            <button mat-button (click)="sidenav.toggle(); toggleMenuIcon()" class="hamburger-btn">
-              <mat-icon>menu</mat-icon>
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav #sidenav mode="side" class="grey-container" opened>
+    <div class="sidebar-content">
+      <!-- Hamburger at top -->
+      <button mat-icon-button (click)="sidenav.toggle()" class="hamburger-btn">
+        <mat-icon>menu</mat-icon>
+      </button>
+    
+      <!-- Full nav when open -->
+      <div class="sidebar-menu" *ngIf="sidenav.opened">
+        @for (menuItem of config()?.menu; track menuItem) {
+          <div class="nav-item-wrapper" [class.has-search]="menuItem.showSearch">
+            <button mat-button class="nav-item">
+              <mat-icon>{{ menuItem.icon }}</mat-icon>
+              {{ menuItem.text }}
             </button>
-          </div>
       
-          <!-- Main menu section -->
-          <div class="sidebar-menu">
-            @for (menuItem of config()?.menu; track menuItem) {
-                <button mat-button>{{ menuItem.text }}</button>
+            @if (menuItem.showSearch) {
+              <mat-form-field appearance="outline" class="search-field">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Search {{ menuItem.text }}" />
+                <mat-icon matSuffix>search</mat-icon>
+              </mat-form-field>
             }
           </div>
-        </div>
-    </mat-sidenav>      
+        }
+      </div>
+      
+    
+      <!-- Icon-only nav when collapsed -->
+      <div class="collapsed-icon-menu" *ngIf="!sidenav.opened">
+        @for (menuItem of config()?.menu; track menuItem) {
+          <button mat-icon-button [routerLink]="menuItem.path">
+            <mat-icon>{{ menuItem.icon }}</mat-icon>
+          </button>
+        }
+      </div>
+    </div>
+  </mat-sidenav>
 
-    <mat-sidenav-content>
-        <button *ngIf="!opened" mat-button (click)="toggleMenuIcon(); sidenav.toggle()" class="hamburger-btn"><mat-icon>menu</mat-icon></button>
-    </mat-sidenav-content>
+  <mat-sidenav-content>
+    <!-- Show only when sidenav is closed -->
+    <div *ngIf="!sidenav.opened" class="collapsed-icon-menu">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      @for (menuItem of config()?.menu; track menuItem) {
+        <button
+          mat-icon-button
+          [routerLink]="menuItem.path"
+        >
+          <mat-icon>{{ menuItem.icon }}</mat-icon>
+        </button>
+      }
+    </div>
+  </mat-sidenav-content>
+
 </mat-sidenav-container>
-  
