@@ -10,16 +10,30 @@ import { RouterModule } from '@angular/router';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatLabel } from '@angular/material/form-field';
+import { ViewChild, ElementRef } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Title } from '@angular/platform-browser';
 
 type SidebarLink = {
   type: 'link';
   text: string;
-  icon: string;
+  icon?: string;
   path: string;
-  showSearch?: boolean;
 };
 
-export type SidebarMenuItem = SidebarLink;
+type SidebarTitle = {
+  type: 'title';
+  text: string;
+}
+
+type SidebarSearch = {
+  type: 'search';
+  label: string;
+  placeholder?: string;
+  icon: string;
+};
+
+export type SidebarMenuItem = SidebarLink | SidebarSearch | SidebarTitle;
 
 export type SidebarConfig = {
   menu: SidebarMenuItem[];
@@ -46,12 +60,22 @@ export type SidebarConfig = {
 })
 
 export class LinkerSidebarComponent {
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  @ViewChild('personIdSearchInput') personIdSearchInput!: ElementRef<HTMLInputElement>;
   opened: boolean = false;
   config = input<SidebarConfig>();
   
 
   toggleMenuIcon() {
     this.opened = !this.opened;
+  }
+
+  focusSearch() {
+    this.sidenav.open(); // open sidebar first
+    // Wait for sidebar to finish rendering then focus
+    setTimeout(() => {
+      this.personIdSearchInput?.nativeElement?.focus();
+    }, 150); // 150ms is usually plenty
   }
 
 }

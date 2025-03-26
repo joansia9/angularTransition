@@ -44,7 +44,8 @@ export class LayoutComponent {
 
   sidebarConfig: SidebarConfig = {
     menu: [
-      { type: 'link', text: 'Person ID', icon: 'badge', path: '/', showSearch: true },
+      { type: 'title', text: 'Linker'},
+      { type: 'search', label: 'Search Person ID', placeholder: 'Search Person ID', icon: 'search'},
       { type: 'link', text: 'Person', icon: 'person', path: '/' },
       { type: 'link', text: 'Source', icon: 'source', path: '/' },
       { type: 'link', text: 'Repository', icon: 'folder', path: '/' },
@@ -52,5 +53,6 @@ export class LayoutComponent {
       { type: 'link', text: 'Data Management', icon: 'manage_accounts', path: '/' }
     ]
   };
+  
   
 }
