@@ -1,8 +1,8 @@
 header {
-    background-color:  #002E5D;
     font-family: 'HCo Ringside Narrow SSm', 'Open Sans', Helvetica, Arial, sans-serif;
 
     .header-top {
+      background-color:  #002E5D;
       display: flex;
       align-items: center;
       padding: 10px 20px 20px;
@@ -114,5 +114,19 @@ header {
         }
       }
     }
-    
+    .header-bottom{
+      color: #ffffff;
+      border-bottom: 1px solid #002E5D;
+
+      .header-nav {
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        gap: 30px;  
+        font-weight: bold;
+        padding: 10px 20px;
+        margin: 10px;
+        margin-left: 130px; //TODO maybe make another div box next to it
+      }
+    }
 }

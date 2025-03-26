@@ -6,6 +6,8 @@ type HeaderLink = {
   path: string;
 };
 
+//A HeaderMenu can be either a simple link with path,
+//OR a menu group with nested items
 type HeaderMenu = HeaderLink | {
   text: string;
   items: HeaderLink[];
@@ -18,6 +20,7 @@ export type HeaderConfig = {
   menu?: HeaderMenu[];
 }
 
+
 @Component({
   selector: 'byu-header',
   imports: [RouterModule],
@@ -26,6 +29,10 @@ export type HeaderConfig = {
 })
 export class ByuHeaderComponent {
   config = input<HeaderConfig>();
+  
+  isHeaderLink(item: HeaderMenu): item is HeaderLink {
+    return 'path' in item;
+  }
 }
 
 //notes

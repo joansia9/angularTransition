@@ -27,6 +27,12 @@
         <nav class="header-nav">
             @for (menuItem of config()?.menu; track menuItem.text){
                 <!-- FIXME: Add routerLink to the anchor tag -->
+                @if (isHeaderLink(menuItem)) {
+                 <div>
+                    <!--getting an error because it is a union type which means a headerMenu can either be a HeaderLink or a group wiwth  items | -->
+                    <a routerLink="{{menuItem.path}}">{{menuItem.text}}</a>
+                 </div>
+                }
             }
         </nav>
     </div>
