@@ -1,5 +1,6 @@
+//Linker-sidebar.component.scss
 mat-sidenav-container {
-  height: 100vh;  /* Explicitly set the height of the sidenav container */
+  height: 100vh;
 }
 
 mat-sidenav {
@@ -66,8 +67,8 @@ mat-sidenav-content {
 
 .search-field {
   width: 92%;             // slightly wider and closer to left
-  margin: 0.1rem 0 0 8px; // top margin, no right/bottom, slight left indent
+  margin: 0.1rem 0 0; // top margin, no right/bottom
   height: 60px;           // tighter vertical space
+  align-items: center;
+
 }
-
-
