@@ -68,6 +68,15 @@ export class LayoutComponent {
       { type: 'link', text: 'Data Management', icon: 'manage_accounts', path: '/' }
     ]
   };
-  
+
+  openDropdownText: string | null = null;
+  toggleDropdown(text: string) {
+    this.openDropdownText = this.openDropdownText === text ? null : text;
+  }
+  isOpen(text: string): boolean {
+    return this.openDropdownText === text;
+
+  }
+
   
 }

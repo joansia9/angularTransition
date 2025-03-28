@@ -36,6 +36,8 @@ export class ByuHeaderComponent {
   
 }
 
+
+
 //notes
 // @input Decorators are about declaring properties and behaviors.
 // input Signals are about creating reactive data flows that automatically propagate changes.

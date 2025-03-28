@@ -42,11 +42,13 @@
                         <div class="header-nav-item-content">
                             {{ menuItem.text }}
                         </div>
+                        <ul class = "dropdown-menu">
                         @for(dropItem of menuItem.items; track dropItem.text){
                             <li class="dropdown-item">
                                 <a routerLink="{{ dropItem.path }}">{{ dropItem.text }}</a>
                             </li>
                         }
+                        </ul>
                     </li>
                 }
             }
