@@ -29,10 +29,13 @@
                 <!-- FIXME: Add routerLink to the anchor tag -->
                 @if (isHeaderLink(menuItem)) {
                  <li class = "header-nav-item">
-                    <div class = "header-nav-item-content" tabindex ='0' aria-haspopup="true" aria-expanded="true">
-                        <!--getting an error because it is a union type which means a headerMenu can either be a HeaderLink or a group wiwth  items | -->
-                        <a routerLink="{{menuItem.path}}">{{menuItem.text}}</a>
-                    </div>
+                    <!--getting an error because it is a union type which means a headerMenu can either be a HeaderLink or a group wiwth  items | -->
+                    <a class="header-nav-item-content"
+                    routerLink="{{menuItem.path}}"
+                    tabindex="0"
+                    aria-haspopup="true"
+                    aria-expanded="true">{{menuItem.text}}</a>
+                    
                  </li>
                 }
             }

@@ -116,17 +116,32 @@ header {
     }
     .header-bottom{
       color: #ffffff;
-      border-bottom: 1px solid #002E5D;
 
       .header-nav {
         display: flex;
         flex-direction:row;
-        align-content: center;
-        gap: 30px;  
-        font-weight: bold;
-        padding: 10px 20px;
+        align-content: center;  
+        padding-left: 115px;
+      }
+
+      .header-nav-item{
+        display:block;
+        list-style: none; //bc a dot was showing up for the list'
+        transition: all .25s;
+        text-decoration: none;
+      }
+
+      .header-nav-item:hover {
+        box-shadow: inset 0 -5px 0 0 #002E5D;;        /* cyan underline appears on hover */
+        background-color: #f1f1f1;
+      }
+
+      .header-nav-item-content{
         margin: 10px;
-        margin-left: 130px; //TODO maybe make another div box next to it
+        display: inline-block;
+        padding: 11px 22px;
+        text-decoration: none;
+        color:#002E5D
       }
     }
 }

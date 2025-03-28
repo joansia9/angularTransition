@@ -37,7 +37,16 @@ export class LayoutComponent {
       {
         text: 'item 2',
         path: '/'
+      },
+      {
+        text: 'item 3',
+        path: '/'
+      },
+      {
+        text: 'item 4',
+        path: '/'
       }
+    
     ]
   }
 

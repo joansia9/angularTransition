@@ -1,5 +1,5 @@
-import { Component, input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, input, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 type HeaderLink = {
   text: string;
@@ -29,10 +29,11 @@ export type HeaderConfig = {
 })
 export class ByuHeaderComponent {
   config = input<HeaderConfig>();
-  
+
   isHeaderLink(item: HeaderMenu): item is HeaderLink {
     return 'path' in item;
   }
+  
 }
 
 //notes
