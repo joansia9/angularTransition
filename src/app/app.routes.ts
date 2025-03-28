@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Page1Component } from './page1/page1.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { Page2Component } from './page2/page2.component';
 import { LayoutComponent } from './layout/layout.component';
 import { Page3Component } from './page3/page3.component';
@@ -10,7 +10,7 @@ export const routes: Routes = [
         path: "",
         component: LayoutComponent,
         children: [
-            { path: "one", component: Page1Component, title: "Page One" },
+            { path: "", component: HomePageComponent, title: "Nauvoo" },
             { path: "two", component: Page2Component }
         ]
     },
@@ -22,5 +22,5 @@ export const routes: Routes = [
             { path: "four", component: Page4Component }
         ]
     },
-    { path: "**", component: Page1Component }
+    { path: "**", component: HomePageComponent }
 ];

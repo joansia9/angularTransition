@@ -1,6 +1,5 @@
-.nav-container {
-  height: 100vh;
-  overflow: hidden;
+mat-sidenav-container {
+  height: 100vh;  /* Explicitly set the height of the sidenav container */
 }
 
 mat-sidenav {
@@ -10,10 +9,10 @@ mat-sidenav {
 
 mat-sidenav-content {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .sidebar-content,
-.sidebar-menu,
 .collapsed-icon-menu {
   display: flex;
   flex-direction: column;
@@ -23,14 +22,18 @@ mat-sidenav-content {
   padding: 10px 0;
 }
 
-.hamburger-btn {
-  margin-left: 16px;
-  margin-bottom: 1rem;
+.chevron_left {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  margin-right: 4px;
+  align-self: flex-end;
 }
 
 .sidebar-menu {
   padding-left: 16px;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-menu button,
@@ -67,17 +70,4 @@ mat-sidenav-content {
   height: 60px;           // tighter vertical space
 }
 
-.nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-  margin-bottom: 6px;
-}
-
-.nav-title {
-  font-size: 2rem;
-  font-weight: 500;
-  color: darkslategray;
-}
 

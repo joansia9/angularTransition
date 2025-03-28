@@ -1,21 +1,8 @@
-<mat-sidenav-container class="nav-container">
+<mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" class="grey-container" opened>
     <div class="sidebar-content">
-      <!-- Hamburger at top -->
-      @for (menuItem of config()?.menu; track menuItem) {
-        @if (menuItem.type === 'title') {
-          <div class="nav-header">
-            <span class="nav-title">{{ menuItem.text }}</span>
-            <button mat-icon-button (click)="sidenav.toggle()">
-              <mat-icon>menu</mat-icon>
-            </button>
-          </div>
-        }
-      }
-      
-
       <!-- Full nav when open -->
-      <div class="sidebar-menu" *ngIf="sidenav.opened">
+      <div *ngIf="sidenav.opened" class="sidebar-menu">
         @for (menuItem of config()?.menu; track menuItem) {
           @if (menuItem.type === 'link') {
             <button mat-button class="nav-item">
@@ -37,26 +24,16 @@
           }
         }
       </div>
-
-      <!-- Icon-only nav when collapsed -->
-      <div class="collapsed-icon-menu" *ngIf="!sidenav.opened">
-        @for (menuItem of config()?.menu; track menuItem) {
-          @if (menuItem.type === 'link') {
-            <button mat-icon-button [routerLink]="menuItem.path">
-              <mat-icon>{{ menuItem.icon }}</mat-icon>
-            </button>
-          }
-        }
-      </div>
+      <!-- Hamburger at bottom -->
+      <button mat-icon-button (click)="sidenav.toggle()" class="chevron_left">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
     </div>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <!-- Show only when sidenav is closed -->
     <div *ngIf="!sidenav.opened" class="collapsed-icon-menu">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
 
       @for (menuItem of config()?.menu; track menuItem) {
         @if (menuItem.type === 'link') {
@@ -71,7 +48,9 @@
           </button>
         }
       }
-      
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
