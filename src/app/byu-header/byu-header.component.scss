@@ -1,5 +1,8 @@
 //byu-header.component.scss
 header {
+  position: sticky;   // keep header fixed at top while scrolling
+  top: 0;
+  z-index: 10;
     font-family: 'HCo Ringside Narrow SSm', 'Open Sans', Helvetica, Arial, sans-serif;
 
     .header-top {
