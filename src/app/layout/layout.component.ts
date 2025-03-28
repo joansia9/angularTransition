@@ -45,6 +45,14 @@ export class LayoutComponent {
       {
         text: 'item 4',
         path: '/'
+      },
+      {
+        text: 'Dropdown Menu TEST',
+        items: [
+          { text: 'Subitem A', path: '/subitem-a' },
+          { text: 'Subitem B', path: '/subitem-b' },
+          { text: 'Subitem C', path: '/subitem-c' }
+        ]
       }
     
     ]

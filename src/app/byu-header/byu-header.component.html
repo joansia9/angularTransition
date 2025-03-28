@@ -26,8 +26,7 @@
     </div>
     <div class="header-bottom">
         <nav class="header-nav">
-            @for (menuItem of config()?.menu; track menuItem.text){
-                <!-- FIXME: Add routerLink to the anchor tag -->
+            @for (menuItem of config()?.menu; track menuItem.text){>
                 @if (isHeaderLink(menuItem)) {
                  <li class = "header-nav-item">
                     <!--getting an error because it is a union type which means a headerMenu can either be a HeaderLink or a group wiwth  items | -->
@@ -36,8 +35,19 @@
                     tabindex="0"
                     aria-haspopup="true"
                     aria-expanded="true">{{menuItem.text}}</a>
-                    
                  </li>
+                 <!--if there is a drop down menu-->
+                } @else {
+                    <li class="header-nav-item dropdown" tabindex="0">
+                        <div class="header-nav-item-content">
+                            {{ menuItem.text }}
+                        </div>
+                        @for(dropItem of menuItem.items; track dropItem.text){
+                            <li class="dropdown-item">
+                                <a routerLink="{{ dropItem.path }}">{{ dropItem.text }}</a>
+                            </li>
+                        }
+                    </li>
                 }
             }
         </nav>
