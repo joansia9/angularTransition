@@ -1,16 +1,20 @@
-//layoutcss
 :host {
-  display: grid;                       // use grid instead of flex
-  grid-template-rows: auto 1fr;         // header takes auto height, main fills remaining space
-  min-height: 100vh;
-}
-
-byu-header {
-  grid-row: 1;                         // header goes in the first row
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow: hidden;
 }
 
 main {
-  grid-row: 2;                         // main (sidebar + router outlet) in the second row
-  display: flex;                       // use flex to lay out sidebar and main content side by side
-  overflow-y: auto;                    // allow scrolling if needed for main content
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100%;
+}
+
+.main-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }

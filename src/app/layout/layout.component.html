@@ -1,10 +1,8 @@
 <!-- layout.component.html -->
-<byu-header
-    [config] = "headerConfig"
-></byu-header>
+<byu-header [config]="headerConfig"></byu-header>
 <main>
-    <app-linker-sidebar
-        [config] = "sidebarConfig"
-    ></app-linker-sidebar>
+  <app-linker-sidebar [config]="sidebarConfig"></app-linker-sidebar>
+  <div class="main-scroll-container">
     <router-outlet></router-outlet>
+  </div>
 </main>
