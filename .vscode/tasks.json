@@ -41,30 +41,31 @@
     {
       "label": "Git Pull",
       "type": "shell",
-      "command": "git pull",                   // pull latest changes
+      "command": "git pull",
       "presentation": {
         "echo": true,
-        "reveal": "always",                    // always show terminal
+        "reveal": "always",
         "focus": false,
-        "panel": "dedicated"                   // separate terminal for this task
+        "panel": "dedicated"
       },
       "runOptions": {
-        "runOn": "folderOpen"                  // runs on workspace open
+        "runOn": "folderOpen"
       }
     },
     {
       "label": "Start Angular Dev Server",
       "type": "shell",
-      "command": "ng serve",                   // starts Angular dev server
+      "command": "ng serve",
       "presentation": {
         "echo": true,
-        "reveal": "always",                    // show terminal output
+        "reveal": "always",
         "focus": false,
         "panel": "dedicated"
       },
       "runOptions": {
-        "runOn": "folderOpen"                  // also runs on workspace open
-      }
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": []
     }
   ]
 }
