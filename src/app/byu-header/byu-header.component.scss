@@ -164,6 +164,8 @@ header {
         top: 100%; /* place it directly below the parent */
         left: 0;
         padding: 11px 22px;
+        width: min-content;
+        margin:-5px;
       }
 
     
