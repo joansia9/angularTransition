@@ -1,5 +1,6 @@
 import { Component, input, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { NgIf, NgFor } from '@angular/common';
 
 type HeaderLink = {
   text: string;
@@ -23,7 +24,7 @@ export type HeaderConfig = {
 
 @Component({
   selector: 'byu-header',
-  imports: [RouterModule],
+  imports: [RouterModule, NgIf], // 👈 add these here this fixed the drop down menu lol
   templateUrl: './byu-header.component.html',
   styleUrl: './byu-header.component.scss'
 })
@@ -32,6 +33,19 @@ export class ByuHeaderComponent {
 
   isHeaderLink(item: HeaderMenu): item is HeaderLink {
     return 'path' in item;
+  }
+
+  // Track which dropdown is open (null means none are open)
+  openDropdownText: string | null = null;
+  
+  // Toggle function — if clicking the same dropdown, close it; otherwise open it
+  toggleDropdown(text: string) {
+    this.openDropdownText = this.openDropdownText === text ? null : text;
+  }
+  
+  // Check if a given dropdown is currently open
+  isOpen(text: string): boolean {
+    return this.openDropdownText === text;
   }
   
 }

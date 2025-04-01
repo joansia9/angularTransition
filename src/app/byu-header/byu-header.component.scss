@@ -148,5 +148,33 @@ header {
         text-decoration: none;
         color:#002E5D
       }
+      .header-nav-item-dropdown{
+        position: relative;
+        list-style: none;
+      }
+
+      .header-nav-item-dropdown:hover {
+        box-shadow: inset 0 -5px 0 0 #002E5D;;        
+        background-color: #f1f1f1;
+      }
+      .dropdown-item-menu{
+        position: absolute;
+        background: rgb(221, 216, 216);
+        z-index: 1000;
+        top: 100%; /* place it directly below the parent */
+        left: 0;
+        padding: 11px 22px;
+      }
+
+    
+      .dropdown-item-content{
+        margin: 10px;
+        display: inline-block;
+        text-decoration: none;
+        text-wrap: nowrap;
+        color:#002E5D;
+      }
+        
+      
     }
 }

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { ByuHeaderComponent, HeaderConfig } from '../byu-header/byu-header.component';
 import { LinkerSidebarComponent, SidebarConfig } from '../linker-sidebar/linker-sidebar.component';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [ByuHeaderComponent, LinkerSidebarComponent, RouterOutlet],
+  imports: [ByuHeaderComponent, LinkerSidebarComponent, RouterOutlet, CommonModule],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })
@@ -44,7 +45,11 @@ export class LayoutComponent {
       },
       {
         text: 'item 4',
-        path: '/'
+        items: [
+          { text: 'Subitem A', path: '/subitem-a' },
+          { text: 'Subitem B', path: '/subitem-b' },
+          { text: 'Subitem C', path: '/subitem-c' }
+        ]
       },
       {
         text: 'Dropdown Menu TEST',
@@ -69,14 +74,7 @@ export class LayoutComponent {
     ]
   };
 
-  openDropdownText: string | null = null;
-  toggleDropdown(text: string) {
-    this.openDropdownText = this.openDropdownText === text ? null : text;
-  }
-  isOpen(text: string): boolean {
-    return this.openDropdownText === text;
-
-  }
-
+ 
   
+
 }
