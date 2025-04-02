@@ -1,22 +1,20 @@
 mat-sidenav-container {
   display: fixed;
   height: 100%;
-  min-height: 0;
+  overflow: hidden;
 }
 
 mat-sidenav {
   width: 240px;
   transition: width 0.3s ease;
+  
 }
 
 mat-sidenav-content {
-  height: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-// Layout containers
 .sidebar-content,
 .collapsed-icon-menu {
   display: flex;
@@ -29,30 +27,28 @@ mat-sidenav-content {
   justify-content: space-between;
 }
 
-.sidebar-menu {
-  padding-left: 16px;
+.sidebar-menu,
+.collapsed-icon-menu {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+.sidebar-menu {
+  padding-left: 16px;
 }
 
 .collapsed-icon-menu {
   align-items: center;
   padding-top: 1rem;
-  gap: 0.75rem;
 }
 
-.collapsed-icon-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-// Shared button & icon styling
 .sidebar-menu button,
 .collapsed-icon-menu button {
-  color: darkslategray;
+  color: #002E5D;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .sidebar-menu button {
@@ -61,18 +57,6 @@ mat-sidenav-content {
   padding: 8px 12px;
 }
 
-.sidebar-menu button mat-icon,
-.collapsed-icon-menu button mat-icon {
-  color: darkslategray;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-// Chevron buttons and wrappers
 .chevron-wrapper {
   border-top: 1px solid lightgray;
   padding-top: 0.5rem;
@@ -95,10 +79,6 @@ mat-sidenav-content {
 .chevron_right {
   margin: 0 4px 4px 0;
   align-self: flex-end;
-
-  mat-icon {
-    color: darkslategray;
-  }
 }
 
 .search-field {

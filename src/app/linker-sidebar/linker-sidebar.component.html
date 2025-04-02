@@ -6,7 +6,7 @@
       <div *ngIf="sidenav.opened" class="sidebar-menu">
         @for (menuItem of config()?.menu; track menuItem) {
           @if (menuItem.type === 'link') {
-            <button mat-button class="nav-item">
+            <button mat-button>
               <mat-icon>{{ menuItem.icon }}</mat-icon>
               {{ menuItem.text }}
             </button>
