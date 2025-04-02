@@ -4,15 +4,21 @@ mat-sidenav-container {
   display: fixed;
   height: 100%;
   overflow: hidden;
+  box-shadow: 3px 0px 10px 0px rgba(204, 197, 197, 0.5); 
+  
+
 }
 
 mat-sidenav {
   width: max-content;
+  background-color: $byu-primary-background;
+
 }
 
 mat-sidenav-content {
   display: flex;
   flex-direction: column;
+  background-color: $byu-primary-background;
 }
 
 .sidebar-content {
