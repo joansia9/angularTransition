@@ -59,11 +59,10 @@ export class LinkerSidebarComponent {
   config = input<SidebarConfig>();
 
   focusSearch() {
-    this.sidenav.open(); // open sidebar first
-    // Wait for sidebar to finish rendering then focus
+    this.sidenav.open(); 
     setTimeout(() => {
       this.personIdSearchInput?.nativeElement?.focus();
-    }, 150); // 150ms
+    }, 0);
   }
 
 }
