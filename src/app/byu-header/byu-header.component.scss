@@ -16,14 +16,12 @@ header {
       .logo img {
         height: 40px;
         align-items:center;
-        justify-content: center;
       }
       // TODO: making columns!
       .Header-titles {
         position: relative; // for the ::before element
         display: flex;
         flex-direction: column;
-        justify-content: center;
         padding-left: 30px;
         margin-top: 10px;
         
@@ -43,7 +41,6 @@ header {
       .breadcrumbs {
         display: flex;
         flex-direction:row;
-        align-items: center;
         gap: 10px;  
         font-weight: bold;
     
@@ -125,8 +122,7 @@ header {
 
       .header-nav {
         display: flex;
-        flex-direction:row;
-        align-content: center;  
+        flex-direction:row;  
         padding-left: 115px;
         gap: -5px;
       }
@@ -134,7 +130,7 @@ header {
       .header-nav-item{
         display:block;
         list-style: none; //bc a dot was showing up for the list'
-        transition: all .25s;
+        transition: all .25s; //bruh make that prettier....
         text-decoration: none;
       }
 
@@ -165,7 +161,7 @@ header {
         z-index: 1000;
         top: 100%;
         margin-left:0;
-        width: min-content;
+        width: min-content; //alex added this
         margin:-5px;
         padding:0;
         box-shadow: 0px 3px 3px 0px rgba(204, 197, 197, 0.75); 

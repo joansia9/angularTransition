@@ -39,7 +39,6 @@
                         <div class="header-nav-item-content" >
                             {{ menuItem.text }}
                         </div>
-
                         <ul class = "dropdown-item-menu" *ngIf="openDropdownText === menuItem.text"> 
                         @for(dropItem of menuItem.items; track dropItem.text){
                             <li class = "dropdown-item">
