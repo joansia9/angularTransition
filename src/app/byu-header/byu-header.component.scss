@@ -12,6 +12,7 @@ header {
       padding: 10px 20px 20px;
       gap: 20px;
       color:  #e4edf7;
+
       .logo img {
         height: 40px;
         align-items:center;
@@ -19,7 +20,7 @@ header {
       }
       // TODO: making columns!
       .Header-titles {
-        position: relative; // 👈 required for the ::before element
+        position: relative; // for the ::before element
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -127,6 +128,7 @@ header {
         flex-direction:row;
         align-content: center;  
         padding-left: 115px;
+        gap: -5px;
       }
 
       .header-nav-item{
@@ -159,15 +161,15 @@ header {
       }
       .dropdown-item-menu{
         position: absolute;
-        background: rgb(221, 216, 216);
+        background: white;
         z-index: 1000;
-        top: 100%; /* place it directly below the parent */
-        left: 0;
-        padding: 11px 22px;
+        top: 100%;
+        margin-left:0;
         width: min-content;
         margin:-5px;
+        padding:0;
+        box-shadow: 0px 3px 3px 0px rgba(204, 197, 197, 0.75); 
       }
-
     
       .dropdown-item-content{
         margin: 10px;
@@ -175,8 +177,12 @@ header {
         text-decoration: none;
         text-wrap: nowrap;
         color:#002E5D;
+        padding: 11px 22px;
       }
-        
+  
+      .dropdown-item:hover {    
+        background-color: #f1f1f1;
+      }
       
     }
 }

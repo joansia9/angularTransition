@@ -42,8 +42,10 @@
 
                         <ul class = "dropdown-item-menu" *ngIf="openDropdownText === menuItem.text"> 
                         @for(dropItem of menuItem.items; track dropItem.text){
-                            <li class="dropdown-item-content">
-                                <a routerLink="{{ dropItem.path }}">{{ dropItem.text }}</a>
+                            <li class = "dropdown-item">
+                                <a class="dropdown-item-content"
+                                    routerLink="{{ dropItem.path }}">{{ dropItem.text }}
+                                </a>
                             </li>
                         }
                         </ul>
