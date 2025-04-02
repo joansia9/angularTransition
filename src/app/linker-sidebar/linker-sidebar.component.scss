@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 mat-sidenav-container {
   display: fixed;
   height: 100%;
@@ -5,8 +7,7 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
-  width: 240px;
-  transition: width 0.3s ease;
+  width: max-content;
 }
 
 mat-sidenav-content {
@@ -23,9 +24,9 @@ mat-sidenav-content {
 }
 
 .sidebar-menu {
-  padding-left: 16px;
   display: flex;
   flex-direction: column;
+  padding-inline: 16px;
   gap: 0.75rem;
 }
 
@@ -41,7 +42,7 @@ mat-sidenav-content {
 
 .sidebar-menu button,
 .collapsed-icon-menu button {
-  color: #002E5D;
+  color: $byu-secondary-color;
   display: flex;
   gap: 10px;
 }
@@ -60,13 +61,11 @@ mat-sidenav-content {
 
 .chevron-left-wrapper {
   justify-content: flex-end;
-  padding-left: 0.5rem;
 }
 
 .chevron-right-wrapper {
   margin-top: auto;
   width: 100%;
-  padding: 0.5rem 0 0.5rem 0.5rem;
   justify-content: flex-start;
 }
 
@@ -77,7 +76,8 @@ mat-sidenav-content {
 }
 
 .search-field {
-  width: 92%;
   margin-top: 1rem;
-  height: 60px;
+  margin-bottom: -1em;
+  width: 20ch;
+  min-width: 100%;
 }

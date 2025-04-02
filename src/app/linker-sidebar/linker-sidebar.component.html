@@ -3,8 +3,9 @@
   <mat-sidenav #sidenav mode="side" class="grey-container" opened>
     <div class="sidebar-content">
       <!-- Full nav when open -->
-      <div *ngIf="sidenav.opened" class="sidebar-menu">
+      <div class="sidebar-menu">
         @for (menuItem of config()?.menu; track menuItem) {
+          <!-- link mneu item -->
           @if (menuItem.type === 'link') {
             <button mat-button>
               <mat-icon>{{ menuItem.icon }}</mat-icon>
@@ -12,6 +13,7 @@
             </button>
           }
 
+          <!-- search menu item -->
           @if (menuItem.type === 'search') {
             <mat-form-field appearance="outline" class="search-field">
               <mat-label>{{ menuItem.label }}</mat-label>
@@ -25,7 +27,7 @@
           }
         }
       </div>
-      <!-- Hamburger at bottom -->
+      <!-- chevron at bottom -->
       <div class="chevron-wrapper chevron-left-wrapper">
         <button mat-icon-button (click)="sidenav.toggle()" class="chevron_left">
           <mat-icon>chevron_left</mat-icon>
@@ -53,7 +55,7 @@
         }
       }
       <div class="chevron-wrapper chevron-right-wrapper">
-        <button mat-icon-button (click)="sidenav.toggle()">
+        <button mat-icon-button (click)="sidenav.toggle()" class="chevron_right">
           <mat-icon>chevron_right</mat-icon>
         </button>
       </div>
