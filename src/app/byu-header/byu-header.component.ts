@@ -1,53 +1,58 @@
-import { Component, input, inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { NgIf, NgFor } from '@angular/common';
+import { Component, input, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 type HeaderLink = {
-  text: string;
+  label: string;
   path: string;
 };
 
 //A HeaderMenu can be either a simple link with path,
 //OR a menu group with nested items
-type HeaderMenu = HeaderLink | {
-  text: string;
-  items: HeaderLink[];
+type HeaderMenuItem = {
+  label: string;
+  path?: string;
+  items?: HeaderLink[]
 }
 
 export type HeaderConfig = {
   title: HeaderLink;
   subtitle?: HeaderLink;
   breadcrumbs?: HeaderLink[];
-  menu?: HeaderMenu[];
+  menu?: HeaderMenuItem[];
 }
 
 
 @Component({
   selector: 'byu-header',
-  imports: [RouterModule, NgIf], // 👈 add these here this fixed the drop down menu lol
+  imports: [RouterModule], // 👈 add these here this fixed the drop down menu lol
   templateUrl: './byu-header.component.html',
   styleUrl: './byu-header.component.scss'
 })
 export class ByuHeaderComponent {
   config = input<HeaderConfig>();
+  dropdownStates = signal<Record<string, boolean>>({});
 
-  isHeaderLink(item: HeaderMenu): item is HeaderLink {
+  isHeaderLink(item: HeaderMenuItem): item is HeaderLink {
     return 'path' in item;
   }
 
-  // Track which dropdown is open (null means none are open)
-  openDropdownText: string | null = null;
-  
-  // Toggle function — if clicking the same dropdown, close it; otherwise open it
-  toggleDropdown(text: string) {
-    this.openDropdownText = this.openDropdownText === text ? null : text;
+  toggleDropdown(label: string): void {
+    const current = this.dropdownStates();
+    const newStates: Record<string, boolean> = {};
+
+    Object.keys(current).forEach(key => {
+      newStates[key] = false;
+    });
+    newStates[label] = !current[label];
+
+    this.dropdownStates.set(newStates);
   }
-  
+
   // Check if a given dropdown is currently open
-  isOpen(text: string): boolean {
-    return this.openDropdownText === text;
-  }
-  
+  // isOpen(text: string): boolean {
+  //   return this.openDropdownText === text;
+  // }
+
 }
 
 

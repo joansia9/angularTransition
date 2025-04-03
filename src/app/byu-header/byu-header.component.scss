@@ -1,187 +1,220 @@
 //byu-header.component.scss
 header {
-  position: sticky;   // keep header fixed at top while scrolling
+  position: sticky; // keep header fixed at top while scrolling
   top: 0;
   z-index: 10;
-    font-family: 'HCo Ringside Narrow SSm', 'Open Sans', Helvetica, Arial, sans-serif;
 
-    .header-top {
-      background-color:  #002E5D;
-      display: flex;
+  h4 {
+    font-weight: normal;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .header-top {
+    background-color: #002e5d;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 20px;
+    gap: 20px;
+    color: #e4edf7;
+
+    .logo img {
+      height: 40px;
       align-items: center;
-      padding: 10px 20px 20px;
-      gap: 20px;
-      color:  #e4edf7;
+    }
+    // TODO: making columns!
+    .Header-titles {
+      position: relative; // for the ::before element
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      margin-top: 10px;
 
-      .logo img {
-        height: 40px;
-        align-items:center;
-      }
-      // TODO: making columns!
-      .Header-titles {
-        position: relative; // for the ::before element
-        display: flex;
-        flex-direction: column;
-        padding-left: 30px;
-        margin-top: 10px;
-        
-        &::before {
-          content: " ";
-          display: block;
-          position: absolute;
-          background: #BDD6E6;
-          width: 1px;
-          height: 84%;
-          right: auto;
-          left: 0;
-          top: 13%; 
-      }
-      
-      }
-      .breadcrumbs {
-        display: flex;
-        flex-direction:row;
-        gap: 10px;  
-        font-weight: bold;
-    
-      }
-      .breadcrumbs a {
-        position: relative; //bug fixed add this to render the line
-        color: #a6abb1;  
-        text-decoration: none;
-        font-size: 1.3rem;
-      }
-
-      .breadcrumbs a:not(:first-child) {
-        padding-left: 10px;  //just dont change the padding of the first element
-      }
-
-      .breadcrumbs a:visited {
-        color: #a6abb1;         
-      }
-
-      .breadcrumbs a:hover {
-        color: #ffffff; 
-      }
-      .breadcrumbs a:not(:first-child)::before {
+      &::before {
         content: " ";
         display: block;
         position: absolute;
-        background: #BDD6E6;
+        background: #bdd6e6;
         width: 1px;
         height: 84%;
         right: auto;
         left: 0;
-        top: 13%;   
-      }
-      .title-containers {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-
-        .byu-title{
-          font-size: 2rem;
-          margin-top: 3px;
-          margin-bottom: 1px;
-          font-weight: 500;
-        }
-
-        .byu-subtitle{
-          margin-top: 2px;
-          margin-bottom: 1px;
-          font-size: 1.3rem;
-          font-weight: 300;
-        }
-      }   
-
-      .signin {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.3rem;
-        margin-left: auto;
-
-        .signin-icon {
-          display: flex;
-          margin-left: auto;
-          margin-right: 0px;
-          align-items: center;
-          height: 20px;
-          width: 20px;
-        }
-    
-        .signin-link {
-          color: #FFF;
-          text-decoration: none;
-        }
+        top: 13%;
       }
     }
-    .header-bottom{
+    .breadcrumbs {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      font-weight: bold;
+    }
+    .breadcrumbs a {
+      position: relative; //bug fixed add this to render the line
+      color: #a6abb1;
+      text-decoration: none;
+      font-size: 1.3rem;
+    }
+
+    .breadcrumbs a:not(:first-child) {
+      padding-left: 10px; //just dont change the padding of the first element
+    }
+
+    .breadcrumbs a:visited {
+      color: #a6abb1;
+    }
+
+    .breadcrumbs a:hover {
       color: #ffffff;
-      box-shadow: 0px 3px 10px 0px rgba(204, 197, 197, 0.5); 
+    }
+    .breadcrumbs a:not(:first-child)::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      background: #bdd6e6;
+      width: 1px;
+      height: 84%;
+      right: auto;
+      left: 0;
+      top: 13%;
+    }
+    .title-containers {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
 
-      .header-nav {
+      .byu-title {
+        font-size: 2rem;
+        margin-top: 3px;
+        margin-bottom: 1px;
+        font-weight: 500;
+      }
+
+      .byu-subtitle {
+        margin-top: 2px;
+        margin-bottom: 1px;
+        font-size: 1.3rem;
+        font-weight: 300;
+      }
+    }
+
+    .signin {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      margin-left: auto;
+
+      .signin-icon {
         display: flex;
-        flex-direction:row;  
-        padding-left: 115px;
-        gap: -5px;
+        margin-left: auto;
+        margin-right: 0px;
+        align-items: center;
+        height: 20px;
+        width: 20px;
       }
 
-      .header-nav-item{
-        display:block;
-        list-style: none; //bc a dot was showing up for the list'
-        transition: all .25s; //bruh make that prettier....
+      .signin-link {
+        color: #fff;
         text-decoration: none;
       }
+    }
+  }
 
-      .header-nav-item:hover {
-        box-shadow: inset 0 -5px 0 0 #002E5D;;        
-        background-color: #f1f1f1;
-      }
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 115px;
+    height: 60px;
+    list-style: none;
+    box-shadow: 0px 3px 10px 0px rgba(204, 197, 197, 0.5);
 
-      .header-nav-item-content{
-        margin: 10px;
-        display: inline-block;
-        padding: 11px 22px;
-        text-decoration: none;
-        color:#002E5D
-      }
-      .header-nav-item-dropdown{
-        position: relative;
-        list-style: none;
-        transition: all .25s;
-        
-      }
+    a {
+      display: flex;
+      align-items: center;
+      transition: all 0.25s; //bruh make that prettier....
+      text-decoration: none;
+      text-wrap: nowrap;
+      position: relative;
+      color: #002e5d;
+      margin: 0;
+      padding: 11px 25px;
 
-      .header-nav-item-dropdown:hover {
-        box-shadow: inset 0 -5px 0 0 #002E5D;;        
-        background-color: #f1f1f1;
-        
-      }
-      .dropdown-item-menu{
+      > ul {
         position: absolute;
         background: white;
         z-index: 1000;
-        top: 100%;
-        margin-left:0;
-        width: min-content; //alex added this
-        margin:-5px;
-        padding:0;
-        box-shadow: 0px 3px 3px 0px rgba(204, 197, 197, 0.75); 
+        top: 44px;
+        left: 0;
+        padding: 0;
+        box-shadow: 0px 3px 3px 0px rgba(204, 197, 197, 0.75);
+
+        a {
+          padding: 20px 32px;
+        }
       }
-    
-      .dropdown-item-content{
-        margin: 10px;
-        display: inline-block;
-        text-decoration: none;
-        text-wrap: nowrap;
-        color:#002E5D;
-        padding: 11px 22px;
-      }
-  
-      .dropdown-item:hover {    
-        background-color: #f1f1f1;
-      }
-      
     }
+
+    a:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+    .scrim {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
+    }
+  }
+
+  // .header-nav-item:hover {
+  //   box-shadow: inset 0 -5px 0 0 #002e5d;
+  //   background-color: #f1f1f1;
+  // }
+
+  // .header-nav-item-content {
+  //   margin: 10px;
+  //   display: inline-block;
+  //   padding: 11px 22px;
+  //   text-decoration: none;
+  //   color: #002e5d;
+  // }
+  // .header-nav-item-dropdown {
+  //   position: relative;
+  //   list-style: none;
+  //   transition: all 0.25s;
+  // }
+
+  // .header-nav-item-dropdown:hover {
+  //   box-shadow: inset 0 -5px 0 0 #002e5d;
+  //   background-color: #f1f1f1;
+  // }
+  // .dropdown-item-menu {
+  //   position: absolute;
+  //   background: white;
+  //   z-index: 1000;
+  //   top: 100%;
+  //   margin-left: 0;
+  //   width: min-content; //alex added this
+  //   margin: -5px;
+  //   padding: 0;
+  //   box-shadow: 0px 3px 3px 0px rgba(204, 197, 197, 0.75);
+  // }
+
+  // .dropdown-item-content {
+  //   margin: 10px;
+  //   display: inline-block;
+  //   text-decoration: none;
+  //   text-wrap: nowrap;
+  //   color: #002e5d;
+  //   padding: 11px 22px;
+  // }
+
+  // .dropdown-item:hover {
+  //   background-color: #f1f1f1;
+  // }
 }

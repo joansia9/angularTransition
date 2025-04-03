@@ -13,50 +13,50 @@ import { CommonModule } from '@angular/common';
 export class LayoutComponent {
   headerConfig: HeaderConfig = {
     title: {
-      text: 'Nauvoo',
+      label: 'Nauvoo',
       path: '/'
     },
     subtitle: {
-      text: 'Linker',
+      label: 'Linker',
       path: '/'
     },
     breadcrumbs: [
       {
-        text: 'College of Engineering',
+        label: 'College of Engineering',
         path: '/'
       },
       {
-        text: 'School of rock',
+        label: 'School of rock',
         path: '/'
       }
     ],
     menu: [
       {
-        text: 'item 1',
+        label: 'item 1',
         path: '/'
       },
       {
-        text: 'item 2',
+        label: 'item 2',
         path: '/'
       },
       {
-        text: 'item 3',
+        label: 'item 3',
         path: '/'
       },
       {
-        text: 'item 4',
+        label: 'item 4',
         items: [
-          { text: 'Subitem A', path: '/subitem-a' },
-          { text: 'Subitem B', path: '/subitem-b' },
-          { text: 'Subitem C', path: '/subitem-c' }
+          { label: 'Subitem A', path: '/subitem-a' },
+          { label: 'Subitem B', path: '/subitem-b' },
+          { label: 'Subitem C', path: '/subitem-c' }
         ]
       },
       {
-        text: 'Dropdown Menu TEST',
+        label: 'Dropdown Menu TEST',
         items: [
-          { text: 'Subitem A', path: '/subitem-a' },
-          { text: 'Subitem B', path: '/subitem-b' },
-          { text: 'Subitem C', path: '/subitem-c' }
+          { label: 'Subitem A', path: '/subitem-a' },
+          { label: 'Subitem B', path: '/subitem-b' },
+          { label: 'Subitem C', path: '/subitem-c' }
         ]
       }
     
