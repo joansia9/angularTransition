@@ -149,11 +149,14 @@ header {
       .header-nav-item-dropdown{
         position: relative;
         list-style: none;
+        transition: all .25s;
+        
       }
 
       .header-nav-item-dropdown:hover {
         box-shadow: inset 0 -5px 0 0 #002E5D;;        
         background-color: #f1f1f1;
+        
       }
       .dropdown-item-menu{
         position: absolute;
