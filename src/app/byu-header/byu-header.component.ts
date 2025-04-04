@@ -24,35 +24,22 @@ export type HeaderConfig = {
 
 @Component({
   selector: 'byu-header',
-  imports: [RouterModule], // 👈 add these here this fixed the drop down menu lol
+  imports: [RouterModule], // here this fixed the drop down menu lol
   templateUrl: './byu-header.component.html',
   styleUrl: './byu-header.component.scss'
 })
+
 export class ByuHeaderComponent {
   config = input<HeaderConfig>();
-  dropdownStates = signal<Record<string, boolean>>({});
+  openMenu = signal<string | null>(null);
 
   isHeaderLink(item: HeaderMenuItem): item is HeaderLink {
     return 'path' in item;
   }
 
-  toggleDropdown(label: string): void {
-    const current = this.dropdownStates();
-    const newStates: Record<string, boolean> = {};
-
-    Object.keys(current).forEach(key => {
-      newStates[key] = false;
-    });
-    newStates[label] = !current[label];
-
-    this.dropdownStates.set(newStates);
+  setMenu(label:string | null) {
+    this.openMenu.set(label);
   }
-
-  // Check if a given dropdown is currently open
-  // isOpen(text: string): boolean {
-  //   return this.openDropdownText === text;
-  // }
-
 }
 
 

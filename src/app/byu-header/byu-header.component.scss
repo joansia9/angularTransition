@@ -12,20 +12,25 @@ header {
     list-style: none;
   }
 
-  .header-top {
+  .top {
     background-color: #002e5d;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px 20px;
     gap: 20px;
     color: #e4edf7;
 
-    .logo img {
+    .left  {
+      display: flex;
+      align-items: center;
+    }
+    img {
       height: 40px;
       align-items: center;
     }
     // TODO: making columns!
-    .Header-titles {
+    .titles {
       position: relative; // for the ::before element
       display: flex;
       flex-direction: column;
@@ -54,7 +59,7 @@ header {
       position: relative; //bug fixed add this to render the line
       color: #a6abb1;
       text-decoration: none;
-      font-size: 1.3rem;
+      font-size: 16px;
     }
 
     .breadcrumbs a:not(:first-child) {
@@ -85,26 +90,25 @@ header {
       text-align: left;
 
       .byu-title {
-        font-size: 2rem;
-        margin-top: 3px;
-        margin-bottom: 1px;
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 0;
         font-weight: 500;
       }
 
       .byu-subtitle {
-        margin-top: 2px;
-        margin-bottom: 1px;
+        margin-top: 0;
+        margin-bottom: 0;
         font-size: 1.3rem;
         font-weight: 300;
       }
     }
 
-    .signin {
+    .right {
       display: flex;
       align-items: center;
       gap: 10px;
       font-size: 1.3rem;
-      margin-left: auto;
 
       .signin-icon {
         display: flex;
@@ -133,7 +137,7 @@ header {
     a {
       display: flex;
       align-items: center;
-      transition: all 0.25s; //bruh make that prettier....
+      gap: 20px;
       text-decoration: none;
       text-wrap: nowrap;
       position: relative;
@@ -148,11 +152,16 @@ header {
         top: 44px;
         left: 0;
         padding: 0;
+        
         box-shadow: 0px 3px 3px 0px rgba(204, 197, 197, 0.75);
 
         a {
           padding: 20px 32px;
         }
+      }
+
+      .rotate{
+        transform: rotate(180deg);
       }
     }
 
@@ -170,51 +179,4 @@ header {
       z-index: 999;
     }
   }
-
-  // .header-nav-item:hover {
-  //   box-shadow: inset 0 -5px 0 0 #002e5d;
-  //   background-color: #f1f1f1;
-  // }
-
-  // .header-nav-item-content {
-  //   margin: 10px;
-  //   display: inline-block;
-  //   padding: 11px 22px;
-  //   text-decoration: none;
-  //   color: #002e5d;
-  // }
-  // .header-nav-item-dropdown {
-  //   position: relative;
-  //   list-style: none;
-  //   transition: all 0.25s;
-  // }
-
-  // .header-nav-item-dropdown:hover {
-  //   box-shadow: inset 0 -5px 0 0 #002e5d;
-  //   background-color: #f1f1f1;
-  // }
-  // .dropdown-item-menu {
-  //   position: absolute;
-  //   background: white;
-  //   z-index: 1000;
-  //   top: 100%;
-  //   margin-left: 0;
-  //   width: min-content; //alex added this
-  //   margin: -5px;
-  //   padding: 0;
-  //   box-shadow: 0px 3px 3px 0px rgba(204, 197, 197, 0.75);
-  // }
-
-  // .dropdown-item-content {
-  //   margin: 10px;
-  //   display: inline-block;
-  //   text-decoration: none;
-  //   text-wrap: nowrap;
-  //   color: #002e5d;
-  //   padding: 11px 22px;
-  // }
-
-  // .dropdown-item:hover {
-  //   background-color: #f1f1f1;
-  // }
 }
