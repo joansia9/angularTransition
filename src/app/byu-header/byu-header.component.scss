@@ -17,10 +17,8 @@ header {
   .top {
     background-color: #002e5d;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px 20px;
-    gap: 20px;
+    justify-content: space-between; //pushes them to the sides! (but fix)
+    padding: 10px;
     color: #e4edf7;
 
     .left  {
@@ -29,7 +27,6 @@ header {
     }
     img {
       height: 40px;
-      margin:10px;
       align-items: center;
     }
     // TODO: making columns!
@@ -37,8 +34,8 @@ header {
       position: relative; // for the ::before element
       display: flex;
       flex-direction: column;
-      padding-left: 30px;
-      margin-top: 10px;
+      padding-left: 15px;
+      
 
       &::before {
         content: " ";
@@ -46,7 +43,7 @@ header {
         position: absolute;
         background: #bdd6e6;
         width: 1px;
-        height: 84%;
+        height: 74%;
         right: auto;
         left: 0;
         top: 13%;
@@ -90,8 +87,8 @@ header {
       .byu-title {
         font-size: 24px;
         margin-top: 3px;
-        margin-bottom: 1px;
-        font-weight: 500;
+        margin-bottom: 3px;
+        font-weight: 700;
       }
 
       .byu-subtitle {

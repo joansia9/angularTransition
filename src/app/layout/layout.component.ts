@@ -16,20 +16,20 @@ export class LayoutComponent {
       label: 'Nauvoo',
       path: '/'
     },
-    subtitle: {
-      label: 'Linker',
-      path: '/'
-    },
-    breadcrumbs: [
-      {
-        label: 'College of Engineering',
-        path: '/'
-      },
-      {
-        label: 'School of rock',
-        path: '/'
-      }
-    ],
+    // subtitle: {
+    //   label: 'Linker',
+    //   path: '/'
+    // },
+    // breadcrumbs: [
+    //   {
+    //     label: 'College of Engineering',
+    //     path: '/'
+    //   },
+    //   {
+    //     label: 'School of rock',
+    //     path: '/'
+    //   }
+    // ],
     menu: [
       {
         label: 'item 1',
