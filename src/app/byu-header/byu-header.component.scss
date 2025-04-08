@@ -18,7 +18,7 @@ header {
     background-color: #002e5d;
     display: flex;
     justify-content: space-between; //pushes them to the sides! (but fix)
-    padding: 10px;
+    padding: 13px 16px;
     color: #e4edf7;
 
     .left  {
@@ -28,13 +28,14 @@ header {
     img {
       height: 40px;
       align-items: center;
+      padding-right: 10px;
     }
     // TODO: making columns!
     .titles {
       position: relative; // for the ::before element
       display: flex;
       flex-direction: column;
-      padding-left: 15px;
+      padding-left:24px;
       
 
       &::before {
@@ -102,21 +103,23 @@ header {
     .right {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 1.3rem;
 
-      .signin-icon {
+      .signin-container {
         display: flex;
-        margin-left: auto;
-        margin-right: 0px;
-        align-items: center;
-        height: 20px;
-        width: 20px;
-      }
+        gap: 10px;
+        font-size: 16px;
+        
 
-      .signin-link {
-        color: #fff;
-        text-decoration: none;
+        .signin-icon {
+          display: flex;
+          height: 20px;
+          width: 20px;
+        }
+
+        .signin-link {
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -183,5 +186,27 @@ header {
       height: 100vh;
       z-index: 999;
     }
+  }
+
+ 
+  @media only screen and (max-width: 580px) {
+    .signin-container {
+      //disappear
+      display:none;
+    }
+
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+
+      .bar {
+        height: 4px;
+        width: 30px;
+        background-color: #002e5d;
+        margin: 4px 0;
+        transition: 0.4s;
+      }
+    }
+
   }
 }
