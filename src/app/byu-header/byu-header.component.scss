@@ -5,6 +5,7 @@ header {
   position: sticky; // keep header fixed at top while scrolling
   top: 0;
   z-index: 10;
+  
 
   h4 {
     font-weight: normal;
@@ -35,7 +36,7 @@ header {
       position: relative; // for the ::before element
       display: flex;
       flex-direction: column;
-      padding-left:24px;
+      padding-left: 24px;
       
 
       &::before {
@@ -191,21 +192,24 @@ header {
  
   @media only screen and (max-width: 580px) {
     .signin-container {
-      //disappear
       display:none;
+    }
+
+    .nav {
+      display: none;
     }
 
     .hamburger-menu {
       display: flex;
       flex-direction: column;
+    }
 
-      .bar {
-        height: 4px;
-        width: 30px;
-        background-color: #002e5d;
-        margin: 4px 0;
-        transition: 0.4s;
-      }
+    .bar {
+      height: 4px;
+      width: 30px;
+      background-color: #002e5d;
+      margin: 4px 0;
+      transition: 0.4s;
     }
 
   }
