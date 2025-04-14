@@ -191,6 +191,12 @@ header {
 
  
   @media only screen and (max-width: 580px) {
+
+    .top {
+      flex-direction: column; // stack items vertically
+      align-items: flex-start;
+    }
+    
     .signin-container {
       display:none;
     }
